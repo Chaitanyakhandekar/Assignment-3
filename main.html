@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3</title>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+    font-family:Cereal, Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
+      sans-serif;
+}
+nav{
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background-color: #fff;
+    padding-top: 1px;
+}
+.nav-row1{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin:20px auto;
+    padding-bottom:20px;
+    padding-inline:90px
+}
+.nav-col2,.nav-col3{
+    display:flex;
+    gap:30px;
+    align-items: center;
+}
+.nav-col3 p{
+    opacity: 0.6;
+    font-weight:bold;
+    font-size:14px;
+}
+.profile{
+    display: flex;
+    gap:10px;
+    align-items: center;
+    border:1px solid lightgray;
+    padding:5px 10px;
+    border-radius:30px
+}
+.nav-col2{
+    font-size:15px;
+    color:gray;
+}
+.nav-row2{
+    width:800px;
+    margin: -20px auto;
+}
+.nav-top{
+    padding-bottom: 44px;
+    border-bottom:1px solid #f4f4f4;
+}
+.nav-r2-col1{
+    display: flex;
+    gap:40px;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid #e4e4e4;
+    padding:5px 5px 5px 20px;
+    border-radius:40px;
+    justify-self: center
+}
+.nav-flex-col{
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+}
+.nav-flex-col p{
+    font-size:14px;
+    color:gray;
+}
+.nav-flex-col h6{
+    font-size:12px;
+    /* color:#ff385c; */
+    opacity: 0.7;
+}
+.search{
+    background-color: #ff385c;
+    padding:15px;
+    border-radius:50%;
+}
+.side-border{
+    border-left:1px solid #e4e4e4;
+    padding-left: 20px;
+}
+.nav-footer{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding:20px 20px
+}
+.nav-footer-icons p{
+    font-size:12px;
+    color:gray;
+}
+.nav-footer-icons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+}
+.nav-footer-icons img{
+    opacity: 0.6;
+}
+.nav-footer-icons :hover{
+    opacity: 1;
+}
+.right{
+    border:1px solid lightgray;
+    padding:5px;
+    border-radius:50%;
+    background-color: white;
+}
+
+.sec1-img-container img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+}
+.sec1-flex-container{
+    display:flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    gap:20px;
+    margin: 0px 100px;
+}
+.sec1-img-container{
+    display: flex;
+    flex-direction:column;
+    gap:10px;
+    position: relative;
+}
+.sec1-description{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    position:relative;
+}
+.sec1-description h5{
+    font-size:15px;
+}
+.sec1-description p{
+    color:gray;
+}
+.sec1-description p:nth-child(3){
+  font-weight:bold;
+  color:black;
+}
+.sec1-img-container svg{
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px;
+    border-radius:50%;
+    background-color: #fff;
+}
+.sec2{
+    margin-top: 50px;
+}
+.sec2 h1{
+    margin-left:100px;
+    margin-bottom:50px;
+    font-size:33px;
+    opacity: 0.8;
+}
+.sec3-row1{
+    display: flex;
+    column-gap:25px;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 20px;
+    font-size:14px;
+    color:gray;
+    font-weight: 600;
+}
+.sec3{
+    background-color: #f7f7f7;
+    margin-top: 50px;
+    padding-top: 20px;
+}
+.sec3-row2{
+    display: flex;
+    flex-wrap:wrap;
+    column-gap:120px;
+    row-gap:30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e4e4e4;
+    font-size:14px;
+    color:gray;
+
+}
+.sec3-row3{
+    display: flex;
+    gap:300px;
+    font-size:14px;
+    color:gray;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e4e4e4;
+
+}
+.sec3-flex-container{
+    display: flex;
+    flex-direction:column;
+    gap:30px;
+    margin-inline: 100px;
+    
+}
+.fc{
+    display: flex;
+    flex-direction: column;
+}
+.sec3-r3-col{
+    display: flex;
+    flex-direction:column;
+    font-size:14px;
+    color:gray;
+    gap:12px
+}
+.sec3-r3-col p:first-child{
+    color:black;
+    font-weight:500;
+    opacity: 0.9;
+}
+.sec3-bottom{
+    display: flex;
+    font-size:14px;
+    gap:13px;
+    color:gray;
+    padding-bottom: 20px;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-top">
+        <div class="nav-row1">
+            <div class="nav-col1">
+              <img
+                class="nav-logo"
+                src="https://logos-download.com/wp-content/uploads/2016/03/Airbnb_logo.png"
+                height="30"
+                alt=""
+              />
+            </div>
+            <div class="nav-col2">
+              <p>Stay</p>
+              <p>Experiences</p>
+              <p>Online Experiences</p>
+            </div>
+            <div class="nav-col3">
+              <p>Airbnb your home</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-globe"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"
+                />
+              </svg>
+              <div class="profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-list"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                  />
+                </svg>
+                <img
+                  class="user"
+                  src="https://www.pngall.com/wp-content/uploads/5/Profile.png"
+                  height="30"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+    
+          <div class="nav-row2">
+            <div class="nav-r2-col1">
+              <div class="nav-flex-col">
+                <h6>Where</h6>
+                <p>Search destinations</p>
+              </div>
+              <div class="nav-flex-col side-border">
+                <h6>Check in</h6>
+                <p>Add dates</p>
+              </div>
+              <div class="nav-flex-col side-border">
+                <h6>Check out</h6>
+                <p>Add dates</p>
+              </div>
+              <div class="nav-flex-col side-border">
+                <h6>Who</h6>
+                <p>Add guests</p>
+              </div>
+              <div class="nav-flex-col">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="white"
+                  class="search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="nav-footer">
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/im/pictures/mediaverse/category_icon/original/3e5243c8-4d15-4c6b-97e3-7ba2bb7bb880.png" alt="" width="25">
+                <p>Icons</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg" alt="" width="25">
+                <p>Amazing views</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" alt="" width="25">
+                <p>Amazing pools</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg" alt="" width="25">
+                <p>Lackfront</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg" alt="" width="25">
+                <p>Countryside</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg" alt="" width="25">
+                <p>Off-the-grid</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg" alt="" width="25">
+                <p>Farms</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg" alt="" width="25">
+                <p>OMG</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" alt="" width="25">
+                <p>Cabins</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg" alt="" width="25">
+                <p>Beachfront</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg" alt="" width="25">
+                <p>Luxe</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg" alt="" width="25">
+                <p>Castles</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/4d4a4eba-c7e4-43eb-9ce2-95e1d200d10e.jpg" alt="" width="25">
+                <p>Treehouses</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/248f85bf-e35e-4dc3-a9a1-e1dbff9a3db4.jpg" alt="" width="25">
+                <p>Top of the world</p>
+            </div>
+            <div class="nav-footer-icons">
+                <img src="https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg" alt="" width="25">
+                <p>Islands</p>
+            </div>
+            <div class="nav-footer-icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg>
+            </div>
+      </div>
+    </nav>
+
+    <section class="sec1">
+        <div class="sec1-flex-container">
+            <div class="sec1-img-container">
+                <img src="https://wallpapercave.com/wp/dcWKXYb.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://bing.gifposter.com/bingImages/PenaNationalPalace_EN-US11543993811_1920x1080.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://cdn.wallpapersafari.com/55/91/NrvTDS.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://www.gettyimages.in/gi-resources/images/500px/983703508.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://img.freepik.com/free-photo/abstract-glowing-flame-drops-electric-illumination-generative-ai_188544-8092.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images-750x420.jpg" alt="" >
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://www.gettyimages.in/gi-resources/images/VR/GettyImages-500977426.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://petapixel.com/assets/uploads/2018/04/gettyimagesfeat.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://www.stjohnsmag.com/uploads/7/8/2/2/7822260/travel-dreams-april-2020-adobestock-208717161_orig.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://jooinn.com/images/bicycle-rider-7.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://wallpapers.com/images/featured/rain-wvg633bz89xx0335.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+            <div class="sec1-img-container">
+                <img src="https://3.bp.blogspot.com/-2_uQf67bInA/UAFQxIwX8qI/AAAAAAAAAC4/G7mqOd8glAA/s1600/Nature_Flowers_Beautiful_flowers.jpg" alt="" width="310" height="310">
+                <div class="sec1-description">
+                    <h5>Open the olympic games at Musse d'Orsay</h5>
+                    <p>Hosted by Mathieu Lehanneur</p>
+                    <p>Comming 18 June</p>
+                    
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec2">
+      <h1>Past experiences</h1>
+      <div class="sec1-flex-container">
+        <div class="sec1-img-container">
+          <img src="https://i.pinimg.com/736x/0e/e6/6a/0ee66af656429fbc8efe612e3d5e65b4--beautiful-places-image-search.jpg" alt="" width="310" height="310">
+          <div class="sec1-description">
+              <h5>Open the olympic games at Musse d'Orsay</h5>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <p>Comming 18 June</p>
+              
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+      </div>
+        <div class="sec1-img-container">
+          <img src="https://h2.gifposter.com/bingImages/LakeUrmia_EN-US4986086287_1920x1080.jpg" alt="" width="310" height="310">
+          <div class="sec1-description">
+              <h5>Open the olympic games at Musse d'Orsay</h5>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <p>Comming 18 June</p>
+              
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+      </div>
+        <div class="sec1-img-container">
+          <img src="https://www.pixelstalk.net/wp-content/uploads/2016/05/Bing-backgrounds-1920x1200.jpg" alt="" width="310" height="310">
+          <div class="sec1-description">
+              <h5>Open the olympic games at Musse d'Orsay</h5>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <p>Comming 18 June</p>
+              
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+      </div>
+        <div class="sec1-img-container">
+          <img src="https://www.bing.com/th?id=OHR.SiberianSunset_FR-FR2365015187_1920x1200.jpg&rf=LaDigue_1920x1200.jpg" alt="" width="310" height="310">
+          <div class="sec1-description">
+              <h5>Open the olympic games at Musse d'Orsay</h5>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <p>Comming 18 June</p>
+              
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+      </div>
+        <div class="sec1-img-container">
+          <img src="https://s3.amazonaws.com/media.briantracy.com/blog/wp-content/uploads/2021/09/03073828/motivational-inspirational-quotes.jpg" alt="" width="310" height="310">
+          <div class="sec1-description">
+              <h5>Open the olympic games at Musse d'Orsay</h5>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <p>Comming 18 June</p>
+              
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+      </div>
+        <div class="sec1-img-container">
+          <img src="https://wallpaperaccess.com/full/832410.jpg" alt="" width="310" height="310">
+          <div class="sec1-description">
+              <h5>Open the olympic games at Musse d'Orsay</h5>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <p>Comming 18 June</p>
+              
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+      </div>
+        <div class="sec1-img-container">
+          <img src="https://korben.info/app/uploads/2020/02/Beautiful-Bing-Images.jpg" alt="" width="310" height="310">
+          <div class="sec1-description">
+              <h5>Open the olympic games at Musse d'Orsay</h5>
+              <p>Hosted by Mathieu Lehanneur</p>
+              <p>Comming 18 June</p>
+              
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
+<path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
+</svg>
+      </div>
+      </div>
+    </section>
+
+    <section class="sec3">
+      <div class="sec3-flex-container">
+        <h2>Inspiration for future getaways</h2>
+        <div class="sec3-row1">
+          <p>Popular</p>
+          <p>Arts & culture</p>
+          <p> Outdoors</p>
+          <p> Mountains</p>
+          <p>Beach</p>
+          <p> Unique stays</p>
+          <p>Categories</p>
+          <p>Things to do</p>
+        </div>
+
+        <div class="sec3-row2">
+          <div class="sec3-r3-col">
+            <div class="fc">
+              <p>Canmore</p>
+              <p>Apartment rentals</p>
+            </div>
+            <div class="fc">
+              <p>Benalmádena</p>
+            <p>House rentals</p>
+            </div>
+            <div class="fc">
+            <p>Marbella</p>
+            <p>Cottage rentals</p>
+            </div>
+          </div>
+          <div class="sec3-r3-col">
+            <div class="fc">
+              <p>Mijas</p>
+            <p>Holiday rentals</p>
+            </div>
+           <div class="fc">
+            <p>Prescott</p>
+            <p>Cottage rentals</p>
+           </div>
+            <div class="fc">
+              <p>Scottsdale</p>
+            <p>Apartment rentals</p>
+            </div>
+          </div>
+          <div class="sec3-r3-col">
+            <div class="fc">
+              <p>Tucson</p>
+            <p>Holiday rentals</p>
+            </div>
+           <div class="fc">
+            <p>Jasper</p>
+            <p>Cabin rentals</p>
+           </div>
+           <div class="fc">
+            <p>Mountain View</p>
+           <p> House rentals</p>
+           </div>
+          </div>
+          <div class="sec3-r3-col">
+            <div class="fc">
+              <p>Devonport</p>
+            <p>Holiday rentals</p>
+            </div>
+            <div class="fc">
+              <p>Mallacoota</p>
+            <p>Pet-friendly rentals</p>
+            </div>
+            <div class="fc">
+              <p>Ibiza</p>
+           <p> Holiday rentals</p>
+            </div>
+          </div>
+         <div class="sec3-r3-col">
+          <div class="fc">
+            <p>Anaheim</p>
+          <p>House rentals</p>
+          </div>
+          <div class="fc">
+            <p>Monterey</p>
+          <p>Bungalow rentals</p>
+          </div>
+          <div class="fc">
+            <p>Paso Robles</p>
+          <p>Holiday rentals</p>
+          </div>
+         </div>
+          <div class="sec3-r3-col">
+            <div class="fc">
+              <p>Santa Barbara</p>
+            <p>Beach house rentals</p>
+            </div>
+            <div class="fc">
+              <p>Sonoma</p>
+              <p>Pet-friendly rentals</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec3-row3">
+              <div class="sec3-r3-col">
+                <p> Support</p>
+                <p>Help Centre</p>
+                <p>AirCover</p>
+                <p>Anti-discrimination</p>
+                <p>Disability support</p>
+                <p> Cancellation options</p>
+                <p> Report neighbourhood concern</p>
+              </div>
+
+              <div class="sec3-r3-col">
+                <p> Hosting</p>
+                <p>  Airbnb your home</p>
+                <p>  AirCover for Hosts</p>
+                <p>  Hosting resources</p>
+                <p> Community forum</p>
+                <p> Hosting responsibly</p>
+                <p> Join a free Hosting class</p>
+              </div>
+
+              <div class="sec3-r3-col">
+               <p> Airbnb</p>
+               <p> Newsroom</p>
+               <p> New features</p>
+               <p> Careers</p>
+               <p>Investors</p>
+               <p> Airbnb.org emergency stays</p>
+              </div>
+        </div>
+
+        <div class="sec3-bottom">
+          <p>© 2024 Airbnb, Inc.</p>
+          <p>Privacy</p>
+          <p>Terms</p>
+          <p>Sitemap</p>
+          <p>Company details</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
