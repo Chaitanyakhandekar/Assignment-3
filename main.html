@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 3</title>
-    <style>
-      *{
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    *{
     margin: 0;
     padding: 0;
     font-family:Cereal, Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
@@ -28,7 +30,7 @@ nav{
 }
 .nav-col2,.nav-col3{
     display:flex;
-    gap:30px;
+    gap:8px;
     align-items: center;
 }
 .nav-col3 p{
@@ -47,6 +49,7 @@ nav{
 .nav-col2{
     font-size:15px;
     color:gray;
+   
 }
 .nav-row2{
     width:800px;
@@ -64,12 +67,14 @@ nav{
     border:1px solid #e4e4e4;
     padding:5px 5px 5px 20px;
     border-radius:40px;
-    justify-self: center
+    justify-self: center;
+    position: relative;
 }
 .nav-flex-col{
     display: flex;
     flex-direction: column;
     gap:2px;
+    padding:5px 10px;
 }
 .nav-flex-col p{
     font-size:14px;
@@ -93,7 +98,7 @@ nav{
     display: flex;
     justify-content:space-around;
     align-items: center;
-    padding:20px 20px
+    padding:20px 20px;
 }
 .nav-footer-icons p{
     font-size:12px;
@@ -111,7 +116,7 @@ nav{
 .nav-footer-icons :hover{
     opacity: 1;
 }
-.right{
+.right1{
     border:1px solid lightgray;
     padding:5px;
     border-radius:50%;
@@ -119,17 +124,20 @@ nav{
 }
 
 .sec1-img-container img{
-    width:350px;
-    height:350px;
+    width:340px;
+    height:340px;
     object-fit:cover;
     border-radius:20px;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    transition-delay:0.2s;
 }
 .sec1-flex-container{
     display:flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
-    gap:20px;
-    margin: 0px 100px;
+    justify-content:space-evenly;
+    gap:20px 10px;
 }
 .sec1-img-container{
     display: flex;
@@ -153,7 +161,7 @@ nav{
   font-weight:bold;
   color:black;
 }
-.sec1-img-container svg{
+.bi-box-arrow-up{
     position:absolute;
     top:20px;
     right:20px;
@@ -197,7 +205,8 @@ nav{
 }
 .sec3-row3{
     display: flex;
-    gap:300px;
+    justify-content: space-between;
+    /* gap:300px; */
     font-size:14px;
     color:gray;
     padding-bottom: 20px;
@@ -234,8 +243,215 @@ nav{
     color:gray;
     padding-bottom: 20px;
 }
-    </style>
-  </head>
+.nav-col2 p{
+    padding:10px 25px;
+    border-radius:20px
+}
+.nav-col3 p{
+    padding: 10px 10px;
+    border-radius:20px;
+}
+.globe{
+        padding: 10px 10px;
+        border-radius:20px;
+}
+.list{
+    padding:10px 10px;
+    border-radius: 20px;
+}
+.nav-col2 p:hover{
+    background-color: #eee;
+}
+.nav-col2 p:checked{
+    color:black
+}
+.nav-col3 p:hover{
+    background-color: #eee;
+}
+.globe:hover{
+    background-color: #eee;
+}
+.list:hover{
+    background-color: #eee;
+}
+.profile:hover{
+    box-shadow:0 0 3px 3px #eee;
+}
+.nav-flex-col:hover{
+    background-color: #eee;
+    border-radius: 20px;
+}
+.search-hover:hover{
+    box-shadow: 0 0 3px 3px #eee;
+    border-radius: 50%;
+}
+.sec1-img-container img:hover{
+    transform:scale(1.03);
+}
+@media screen and (max-width:1202px){
+    .nf-15{
+        display: none;
+    }
+    .sec2>h1{
+        text-align: center;
+    }
+}
+@media screen and (max-width:1110px){
+    .nf-14{
+        display: none;
+    }
+    .sec2>h1{
+        text-align: center;
+    }
+}
+@media screen and (max-width:986px){
+    .nf-13{
+        display: none;
+    }
+    .sec2>h1{
+        text-align: center;
+    }
+    .nav-col2{
+        display: none;
+    }
+    .nav-row1{
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width:860px){
+    .nf-12,.nf-11,.nf-10{
+        display: none;
+    }
+    .sec2>h1{
+        text-align: center;
+    }
+    .nav-col2{
+        display: none;
+    }
+    .nav-row1{
+        justify-content: space-around;
+    }
+    .nav-row2{
+        width:80%;
+    }
+    .nav-flex-col p{
+        display: none;
+    }
+    .sr-8,.sr-7{
+        display: none;
+    }
+}
+@media screen and (max-width:590px){
+    .nf-12,.nf-11,.nf-10,.nf-9,.nf-8{
+        display: none;
+    }
+    .sec2>h1{
+        text-align: center;
+    }
+    .nav-col2{
+        display: none;
+    }
+    .nav-row1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap:30px
+    }
+    .nav-row2{
+        width:100%;
+    }
+    .nav-flex-col p{
+        display: none;
+    }
+    .sr-8,.sr-7,.sr-6{
+        display: none;
+    }
+    .sec1-img-container img{
+        width:100vw;
+        height:400px
+    }
+}
+@media screen and (max-width:490px){
+    .nf-12,.nf-11,.nf-10,.nf-9,.nf-8,.nf-7,.nf-6 {
+        display: none;
+    }
+    .sec2>h1{
+        text-align: center;
+    }
+    .nav-col2{
+        display: none;
+    }
+    .nav-row1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap:30px
+    }
+    .nav-row2{
+        width:100%;
+    }
+    .nav-flex-col p{
+        display: none;
+    }
+    .sr-8,.sr-7,.sr-6,.sr-5{
+        display: none;
+    }
+    .sec1-img-container img{
+        width:100vw;
+        height:400px
+    }
+    .sec3-flex-container{
+        padding: 20px 10px;
+    }
+}
+@media screen and (max-width:386px){
+    .sec2>h1{
+        text-align: center;
+    }
+    .nav-row1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap:30px
+    }
+    .nav-row2{
+        width:100%;
+    }
+    .nav-row1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sr-8,.sr-7,.sr-6,.sr-5,.sr-4,
+    .nav-col3 p ,.globe,.nav-flex-col p,
+    .nav-col2,
+    .nf-12,.nf-11,.nf-10,.nf-9,.nf-8,.nf-7,.nf-6,.nf-5 ,
+    .dnone{
+        display: none;
+    }
+        .sec1-img-container img{
+        width:100vw;
+        height:400px
+    }
+    .sec3-flex-container{
+        padding: 20px 10px;
+        
+    }
+    .sec3-bottom{
+        font-size:10px
+    }
+    .sec3-row1, .fc, .sec3-r3-col{
+        font-size: 10px;
+    }
+    .small{
+        font-size:20px
+    }
+}
+  </style>
   <body>
     <nav>
       <div class="nav-top">
@@ -260,7 +476,7 @@ nav{
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-globe"
+                class="globe"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -273,7 +489,7 @@ nav{
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-list"
+                  class="list"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -305,11 +521,11 @@ nav{
                 <h6>Check out</h6>
                 <p>Add dates</p>
               </div>
-              <div class="nav-flex-col side-border">
+              <div class="nav-flex-col side-border dnone">
                 <h6>Who</h6>
                 <p>Add guests</p>
               </div>
-              <div class="nav-flex-col">
+              <div class="nav-flex-col search-hover search-absolute">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -328,67 +544,67 @@ nav{
       </div>
 
       <div class="nav-footer">
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-1">
                 <img src="https://a0.muscache.com/im/pictures/mediaverse/category_icon/original/3e5243c8-4d15-4c6b-97e3-7ba2bb7bb880.png" alt="" width="25">
                 <p>Icons</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-2">
                 <img src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg" alt="" width="25">
                 <p>Amazing views</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-3">
                 <img src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" alt="" width="25">
                 <p>Amazing pools</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-4">
                 <img src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg" alt="" width="25">
                 <p>Lackfront</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-5">
                 <img src="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg" alt="" width="25">
                 <p>Countryside</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-6">
                 <img src="https://a0.muscache.com/pictures/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg" alt="" width="25">
                 <p>Off-the-grid</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-7">
                 <img src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg" alt="" width="25">
                 <p>Farms</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-8">
                 <img src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg" alt="" width="25">
                 <p>OMG</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-9">
                 <img src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" alt="" width="25">
                 <p>Cabins</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-10">
                 <img src="https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg" alt="" width="25">
                 <p>Beachfront</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-11">
                 <img src="https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg" alt="" width="25">
                 <p>Luxe</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-12">
                 <img src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg" alt="" width="25">
                 <p>Castles</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-13">
                 <img src="https://a0.muscache.com/pictures/4d4a4eba-c7e4-43eb-9ce2-95e1d200d10e.jpg" alt="" width="25">
                 <p>Treehouses</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-14">
                 <img src="https://a0.muscache.com/pictures/248f85bf-e35e-4dc3-a9a1-e1dbff9a3db4.jpg" alt="" width="25">
                 <p>Top of the world</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-15">
                 <img src="https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg" alt="" width="25">
                 <p>Islands</p>
             </div>
-            <div class="nav-footer-icons">
+            <div class="nav-footer-icons nf-16">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                   </svg>
@@ -554,7 +770,7 @@ nav{
   <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
 </svg>
             </div>
-            <div class="sec1-img-container">
+            <div class="sec1-img-container sec1-flex-start">
                 <img src="https://3.bp.blogspot.com/-2_uQf67bInA/UAFQxIwX8qI/AAAAAAAAAC4/G7mqOd8glAA/s1600/Nature_Flowers_Beautiful_flowers.jpg" alt="" width="310" height="310">
                 <div class="sec1-description">
                     <h5>Open the olympic games at Musse d'Orsay</h5>
@@ -669,16 +885,16 @@ nav{
 
     <section class="sec3">
       <div class="sec3-flex-container">
-        <h2>Inspiration for future getaways</h2>
+        <h2 class="small">Inspiration for future getaways</h2>
         <div class="sec3-row1">
-          <p>Popular</p>
-          <p>Arts & culture</p>
-          <p> Outdoors</p>
-          <p> Mountains</p>
-          <p>Beach</p>
-          <p> Unique stays</p>
-          <p>Categories</p>
-          <p>Things to do</p>
+          <p class="sr-1">Popular</p>
+          <p class="sr-2">Arts & culture</p>
+          <p class="sr-3"> Outdoors</p>
+          <p class="sr-4"> Mountains</p>
+          <p class="sr-5">Beach</p>
+          <p class="sr-6"> Unique stays</p>
+          <p class="sr-7">Categories</p>
+          <p class="sr-8">Things to do</p>
         </div>
 
         <div class="sec3-row2">
